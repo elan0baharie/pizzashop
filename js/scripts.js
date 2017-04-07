@@ -1,28 +1,20 @@
 //U.I.
-function guestPizza(size, ingrd, price)  {
+function guestPizza(size, price)  {
   this.size = {sm: 8, med: 10, lg: 14},
-  this.toppings = {pepperoni: 3, mushroom: 2, onion: 1, sausage: 3, bacon: 3, xtrCheese: 2, blackOlive: 2},
   this.tempCostHold = 0;
   this.finalPrice = 0;
   this.topDetect = function () {
-    var selections = [];
+
     var topArray = document.getElementsByName('toppng-lst');
-    console.log(topArray);
       for(var i = 0; i < topArray.length; i++) {
         if(topArray[i].checked) {
-          selections.push(topArray[i].value);
+          console.log(parseInt(topArray[i].value));
+          this.tempCostHold = this.tempCostHold + parseInt(topArray[i].value);
         }
       };
-      console.log(selections);
-      return selections;
+      return this.tempCostHold;
   }
 }
-//
-// guestPizza.prototype.tempPrice = function (szPref, topSum) {
-//   this.
-// };
-
-
 
 //B.L.
 
@@ -32,25 +24,34 @@ $(document).ready(function() {
 
   $("#btnSml").click(function(event) {
     event.preventDefault();
-    newGuestPizza.tempCostHold =newGuestPizza.size.sm;
+    newGuestPizza.tempCostHold = newGuestPizza.size.sm;
+    console.log(newGuestPizza.tempCostHold);
   });// Small Pizza Size btn
 
   $("#btnMed").click(function(event) {
     event.preventDefault();
-    console.log(newGuestPizza.size.med);
+    newGuestPizza.tempCostHold = newGuestPizza.size.med;
+    console.log(newGuestPizza.tempCostHold);
   });// Med Pizza Size btn
 
   $("#btnLrg").click(function(event) {
     event.preventDefault();
-    console.log(newGuestPizza.size.lg);
+    newGuestPizza.tempCostHold = newGuestPizza.size.lg;
+    console.log(newGuestPizza.tempCostHold);
   });// Lg Pizza Size btn
 
   $("#toppng-form").submit(function(event) {
     event.preventDefault();
-    newGuestPizza.topDetect();
-
+    newGuestPizza.finalPrice = newGuestPizza.topDetect();
+    return newGuestPizza.finalPrice;
   });
 
+  $("#price-form").submit(function(event) {
+    event.preventDefault();
+    $("#costBox").text(newGuestPizza.finalPrice);
 
+
+
+  });
 
 });// Doc Ready

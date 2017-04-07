@@ -12,7 +12,7 @@
     <div class="container">
       <div class="row">
         <div class="jumbotron">
-          It's Pizzatime
+          It's Pizzatime!
         </div>
         <div class="col-lg-6">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod purus arcu, ac viverra nunc tempus tempus. In dignissim lorem quis est vulputate, et venenatis lacus varius. Duis molestie pulvinar elit a lobortis. Integer metus massa, porttitor eu neque et, sagittis mattis ipsum. Donec varius, leo imperdiet rhoncus gravida, ex arcu fermentum felis, vel efficitur tortor ipsum at orci. Etiam at odio magna. In vulputate quis mi a semper. In imperdiet sollicitudin massa, et sagittis lacus scelerisque a. Cras ut eros sit amet sapien suscipit lacinia.</p>
@@ -23,63 +23,87 @@
       </div><!--Row Div-->
 
       <div class="row">
-        <div class="col-lg-5">
+        <div class="col-md-6">
           <form id="size-form">
-            <div class="form-group">
-              <label class="col-sm-2 col-form-label">What Size Pizza Would You Like?</label>
-              <button id="btnSml" class="btn btn-info" type="button">Small</button>
-              <button id="btnMed" class="btn btn-info" type="button">Medium</button>
-              <button id="btnLrg" class="btn btn-info" type="button">Large</button>
+            <div class="form-group panel">
+              <div class="panel-heading">
+                <label class="col-form-label">What Size Pizza Would You Like?</label>
+              </div>
+              <hr>
+              <div class="panel-body sizebtns">
+                <button id="btnSml" class="btn btn-info pz-div1" type="button">Small</button>
+                <button id="btnMed" class="btn btn-info pz-div2" type="button">Medium</button>
+                <button id="btnLrg" class="btn btn-info pz-div3" type="button">Large</button>
+              </div>
             </div>
           </form>
         </div>
-        <div class="col-lg-5">
-          <form id="toppng-form">
-            <div class="form-check form-check-inline">
-              <label class="form-check-label" for="pepChck">Pepperoni
-                <input class="form-check-input" type="checkbox" name="toppng-lst" id="pepChck" value="pepperoni">
-              </label>
+        <div class="col-md-6">
+          <div class="form-group panel">
+            <div class="panel-heading">
+              <label class="col-form-label">What Would You Like On Your Pizza?</label>
             </div>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label" for="mushChck">Mushroom
-                <input class="form-check-input" type="checkbox" name="toppng-lst" id="mushChck" value="mushroom">
-              </label>
+            <hr>
+            <div class="panel-body">
+              <form id="toppng-form">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-check form-check-inline">
+                      <label class="form-check-label" for="pepChck">Pepperoni
+                        <input class="form-check-input" type="checkbox" name="toppng-lst" id="pepChck" value="3">
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <label class="form-check-label" for="mushChck">Mushroom
+                        <input class="form-check-input" type="checkbox" name="toppng-lst" id="mushChck" value="2">
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <label class="form-check-label" for="onionChck">Onion
+                        <input type="checkbox" name="toppng-lst" id="onionChck" value="1">
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <label class="form-check-label" for="ssgChck">Sausage
+                        <input type="checkbox" name="toppng-lst" id="ssgChck" value="3">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-check form-check-inline">
+                      <label class="form-check-label" for="bcnChck">Bacon
+                        <input type="checkbox" name="toppng-lst" id="bcnChck" value="3">
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <label class="form-check-label" for="czChck">Extra Cheese
+                        <input type="checkbox" name="toppng-lst" id="czChck" value="2">
+                      </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <label class="form-check-label" for="olvChck">Black Olives
+                        <input type="checkbox" name="toppng-lst" id="olvChck" value="2">
+                      </label>
+                    </div>
+                  </div>
+                  <button class="btn btn-success" id="topBtn" type="submit">I want all this!</button>
+                </form>
+              </div>
             </div>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label" for="onionChck">Onion
-                <input type="checkbox" name="toppng-lst" id="onionChck" value="onion">
-              </label>
-            </div>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label" for="ssgChck">Sausage
-                <input type="checkbox" name="toppng-lst" id="ssgChck" value="sausage">
-              </label>
-            </div>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label" for="bcnChck">Bacon
-                <input type="checkbox" name="toppng-lst" id="bcnChck" value="bacon">
-              </label>
-            </div>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label" for="czChck">Extra Cheese
-                <input type="checkbox" name="toppng-lst" id="czChck" value="xtrCheese">
-              </label>
-            </div>
-            <div class="form-check form-check-inline">
-              <label class="form-check-label" for="olvChck">Black Olives
-                <input type="checkbox" name="toppng-lst" id="olvChck" value="blackOlive">
-              </label>
-            </div>
-            <br>
-            <button class="btn btn-success" id="topBtn" type="submit">I want all this!</button>
-          </form>
+          </div>
         </div>
-        <div class="col-lg-2">
-          <form id="price-form">
-            <div class="form-group">
-              <h3 id="costBox">Price Here</h3>
+        <div class="col-md-6">
+          <div class="form-group panel">
+            <div class="form-group panel-heading">
+              <h3>Total Price</h3>
             </div>
-          </form>
+            <div class="panel-body">
+              <form id="price-form">
+                <div id="costBox"></div>
+                <button class="btn btn-success" type="submit">Price</button>
+              </form>
+            </div>
+          </div>
         </div>
       </div><!--Row Div-->
     </div><!--Container Div-->

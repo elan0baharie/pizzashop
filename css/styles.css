@@ -1,0 +1,71 @@
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/bgtile.png);
+}
+
+hr {
+  border-color: blue;
+  border-width: 3px;
+}
+
+.jumbotron {
+  background-image: url(../img/panorama.jpg);
+  color: #cc1202;
+  font-size: 80px;
+  font-style: bold;
+  text-align: center;
+  font-family: cursive;
+}
+
+.sizebtns {
+  text-align: center;
+}
+
+.panel-heading {
+  text-align: center;
+  font-size: 20pt;
+  color: #2d6fd8;
+  background-color: #d3e4ff;
+  border: 2px solid #2d6fd8;
+  border-radius: 4px;
+}
+
+.pz-div1 {
+  width: 100px;
+  height: 80px;
+  background-image: url(../img/Small-Pizza.jpg);
+  background-size: cover;
+  color: #4286f4;
+  font-weight: bold;
+  font-size: 18pt;
+
+}
+
+.pz-div2 {
+  width: 120px;
+  height: 80px;
+  background-image: url(../img/med-pizza.jpg);
+  background-size: cover;
+  color: #4286f4;
+  font-weight: bold;
+  font-size: 18pt;
+
+}
+
+.pz-div3 {
+  width: 100px;
+  height: 80px;
+  background-image: url(../img/Fancy-Pizza.jpg);
+  background-size: cover;
+  color: #4286f4;
+  font-weight: bold;
+  font-size: 18pt;
+
+}
+
+#costBox {
+  color: green;
+  font-size: 18px;
+  font-weight: bolder;
+}
