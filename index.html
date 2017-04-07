@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.2.0.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Pizza Shop</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="jumbotron">
+          It's Pizzatime
+        </div>
+        <div class="col-lg-6">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod purus arcu, ac viverra nunc tempus tempus. In dignissim lorem quis est vulputate, et venenatis lacus varius. Duis molestie pulvinar elit a lobortis. Integer metus massa, porttitor eu neque et, sagittis mattis ipsum. Donec varius, leo imperdiet rhoncus gravida, ex arcu fermentum felis, vel efficitur tortor ipsum at orci. Etiam at odio magna. In vulputate quis mi a semper. In imperdiet sollicitudin massa, et sagittis lacus scelerisque a. Cras ut eros sit amet sapien suscipit lacinia.</p>
+        </div>
+        <div class="col-lg-6">
+          <p>Fusce ligula odio, cursus vitae dolor eu, sagittis ultrices est. Proin magna leo, ornare non mollis vitae, ornare vel massa. Donec blandit, lacus eget molestie ullamcorper, metus nisi fringilla risus, sit amet ultricies orci massa ac metus. Suspendisse potenti. Sed sodales ante nulla, eu lobortis nulla aliquet vel. Praesent auctor, mi eget rhoncus pharetra, lorem sapien condimentum nisl, sed dictum ligula neque auctor mauris. Duis sit amet risus justo. Aenean eu imperdiet ipsum. Vestibulum id placerat nisi. Duis at consectetur nisi, vitae scelerisque quam. Fusce at ligula sit amet sapien consectetur sollicitudin. Fusce sapien ante, varius eget viverra id, rhoncus quis nulla. Morbi nec ante et mi gravida malesuada sit amet eu ipsum. Vivamus felis mi, fringilla eu leo sed, tincidunt ultricies nisi.</p>
+        </div>
+      </div><!--Row Div-->
+
+      <div class="row">
+        <div class="col-lg-5">
+          <form id="size-form">
+            <div class="form-group">
+              <label class="col-sm-2 col-form-label">What Size Pizza Would You Like?</label>
+              <button id="btnSml" class="btn btn-info" type="button">Small</button>
+              <button id="btnMed" class="btn btn-info" type="button">Medium</button>
+              <button id="btnLrg" class="btn btn-info" type="button">Large</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-5">
+          <form id="toppng-form">
+            <div class="form-check form-check-inline">
+              <label class="form-check-label" for="pepChck">Pepperoni
+                <input class="form-check-input" type="checkbox" name="toppng-lst" id="pepChck" value="pepperoni">
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label" for="mushChck">Mushroom
+                <input class="form-check-input" type="checkbox" name="toppng-lst" id="mushChck" value="mushroom">
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label" for="onionChck">Onion
+                <input type="checkbox" name="toppng-lst" id="onionChck" value="onion">
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label" for="ssgChck">Sausage
+                <input type="checkbox" name="toppng-lst" id="ssgChck" value="sausage">
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label" for="bcnChck">Bacon
+                <input type="checkbox" name="toppng-lst" id="bcnChck" value="bacon">
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label" for="czChck">Extra Cheese
+                <input type="checkbox" name="toppng-lst" id="czChck" value="xtrCheese">
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label" for="olvChck">Black Olives
+                <input type="checkbox" name="toppng-lst" id="olvChck" value="blackOlive">
+              </label>
+            </div>
+            <br>
+            <button class="btn btn-success" id="topBtn" type="submit">I want all this!</button>
+          </form>
+        </div>
+        <div class="col-lg-2">
+          <form id="price-form">
+            <div class="form-group">
+              <h3 id="costBox">Price Here</h3>
+            </div>
+          </form>
+        </div>
+      </div><!--Row Div-->
+    </div><!--Container Div-->
+  </body>
+</html>
