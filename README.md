@@ -28,7 +28,7 @@ _Not yet!_
 
 ## Support and contact details
 
-_Elan Baharie email: 0elan1@gmail.com_
+_Elan Baharie email: 0elan1@gmail.com page found at https://elan0baharie.github.io/pizzashop/_
 
 ## Technologies Used
 
