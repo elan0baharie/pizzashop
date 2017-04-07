@@ -25,6 +25,18 @@ hr {
   text-align: center;
 }
 
+.end {
+  text-align: center;
+}
+
+.button-spacing {
+  margin: 2px;
+}
+
+.hide-class {
+  display: none;
+}
+
 .panel-heading {
   text-align: center;
   font-size: 20pt;
@@ -41,7 +53,7 @@ hr {
 .pz-div1 {
   width: 100px;
   height: 80px;
-  background-image: url(../img/Small-Pizza.jpg);
+  background-image: url(../img/smallpz.jpg);
   background-size: cover;
   color: #4286f4;
   font-weight: bold;
@@ -114,6 +126,6 @@ hr {
 
 #costBox {
   color: green;
-  font-size: 18px;
+  font-size: 28px;
   font-weight: bolder;
 }

@@ -83,10 +83,11 @@ $(document).ready(function() {
   });// Black Olive btn
 
 
-  $("#price-form").submit(function(event) {
+  $("#toppng-form").submit(function(event) {
     event.preventDefault();
     newGuestPizza.createPrice();
-    $("#costBox").text(newGuestPizza.finalPrice);
+    $("#priceSect").show(800);
+    $("#costBox").text("$" + newGuestPizza.finalPrice);
 
 
 
