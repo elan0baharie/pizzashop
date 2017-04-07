@@ -7,6 +7,7 @@ body {
 hr {
   border-color: blue;
   border-width: 3px;
+  background-color: #ddfdff;
 }
 
 .jumbotron {
@@ -31,6 +32,10 @@ hr {
   background-color: #d3e4ff;
   border: 2px solid #2d6fd8;
   border-radius: 4px;
+}
+
+.panel-body {
+  background-color: #ddfdff;
 }
 
 .pz-div1 {
@@ -64,6 +69,47 @@ hr {
   font-weight: bold;
   font-size: 18pt;
 
+}
+
+.pep-btn {
+  background-image: url(../img/peps.jpg);
+  background-size: cover;
+}
+
+.mush-btn {
+  background-image: url(../img/mush.jpg);
+  background-size: cover;
+}
+
+.onn-btn {
+  background-image: url(../img/onion.jpg);
+  background-size: cover;
+}
+
+.ssg-btn {
+  background-image: url(../img/sausg.jpg);
+  background-size: cover;
+}
+
+.bcn-btn {
+  background-image: url(../img/bacon.jpg);
+  background-size: cover;
+}
+
+.xcz-btn {
+  background-image: url(../img/chez.jpg);
+  background-size: cover;
+}
+
+.olv-btn {
+  background-image: url(../img/olive.jpeg);
+  background-size: cover;
+}
+
+.top-img {
+  height: 50px;
+  width: 100px;
+  color: white;
 }
 
 #costBox {
