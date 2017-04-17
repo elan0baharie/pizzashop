@@ -21,75 +21,98 @@
           <p>Fusce ligula odio, cursus vitae dolor eu, sagittis ultrices est. Proin magna leo, ornare non mollis vitae, ornare vel massa. Donec blandit, lacus eget molestie ullamcorper, metus nisi fringilla risus, sit amet ultricies orci massa ac metus. Suspendisse potenti. Sed sodales ante nulla, eu lobortis nulla aliquet vel. Praesent auctor, mi eget rhoncus pharetra, lorem sapien condimentum nisl, sed dictum ligula neque auctor mauris. Duis sit amet risus justo. Aenean eu imperdiet ipsum. Vestibulum id placerat nisi. Duis at consectetur nisi, vitae scelerisque quam. Fusce at ligula sit amet sapien consectetur sollicitudin. Fusce sapien ante, varius eget viverra id, rhoncus quis nulla. Morbi nec ante et mi gravida malesuada sit amet eu ipsum. Vivamus felis mi, fringilla eu leo sed, tincidunt ultricies nisi.</p>
         </div>
       </div><!--Row Div-->
-
       <div class="row">
-        <div class="col-md-6">
-          <form id="size-form">
-            <div class="form-group panel">
-              <div class="panel-heading">
-                <label class="col-form-label">What Size Pizza Would You Like?</label>
-              </div>
-              <div class="panel-body sizebtns">
-                <button id="btnSml" class="btn btn-info pz-div1" type="button">Small</button>
-                <button id="btnMed" class="btn btn-info pz-div2" type="button">Medium</button>
-                <button id="btnLrg" class="btn btn-info pz-div3" type="button">Large</button>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group panel">
-            <div class="panel-heading">
-              <label class="col-form-label">What Would You Like On Your Pizza?</label>
-            </div>
-            <div class="panel-body">
-              <form id="toppng-form">
-                <div class="row">
-                  <div class="col-sm-6">
-                    <div>
-                      <button id="btnPep" class="btn btn-info pep-btn top-img button-spacing" type="button">Pepperoni</button>
-                    </div>
-                    <div>
-                      <button id="btnMsh" class="btn btn-info mush-btn top-img button-spacing" type="button">Mushroom</button>
-                    </div>
-                    <div>
-                      <button id="btnOn" class="btn btn-info onn-btn top-img button-spacing" type="button">Onion</button>
-                    </div>
-                    <div>
-                      <button id="btnSsg" class="btn btn-info ssg-btn top-img button-spacing" type="button">Sausage</button>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div>
-                      <button id="btnBcn" class="btn btn-info bcn-btn top-img button-spacing" type="button">Bacon</button>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <button id="btnCz" class="btn btn-info xcz-btn top-img button-spacing" type="button">Extra Cheese</button>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <button id="btnOlv" class="btn btn-info olv-btn top-img button-spacing" type="button">Black Olives</button>
-                    </div>
-                  </div>
-                  <div class="col-md-10 end">
-                    <button class="btn btn-success" type="submit">I want it all!</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="priceSect" class="col-md-6 hide-class">
-          <div class="form-group panel">
-            <div class="form-group panel-heading">
-              <h3>Total Price</h3>
-            </div>
-            <div class="panel-body">
-              <form id="price-form">
-                <div id="costBox"></div>
+        <div class="testingBox">
 
+          <div class="col-lg-10 orderPnlBg">
+            <div class="col-lg-12 title-box">
+              <h3>Create Your Order</h3>
+            </div><!--Order Title box-->
+            <div class="col-md-2 col-lg-2 lft-btns-sec">
+              <button id="start" class="btn btn-primary btn-lg" value="start" type="button">Begin Order</button>
+            </div><!--End of left buttons panel-->
+            <div class="col-md-9 col-lg-9 cent-sec">
+              <form id="pizzaOrderForm">
+                <div class="size-sec">
+                  <div class="form-group panel">
+                    <div class="panel-heading">
+                      <label class="col-form-label">What Size Pizza Would You Like?</label>
+                    </div>
+                    <div class="panel-body sizebtns">
+                      <button id="btnSml" class="btn btn-info pz-div1" type="button">Small</button>
+                      <button id="btnMed" class="btn btn-info pz-div2" type="button">Medium</button>
+                      <button id="btnLrg" class="btn btn-info pz-div3" type="button">Large</button>
+                      <select id="pzSize">
+                        <option value=""> - </option>
+                        <option value="small">Small</option>
+                        <option value="med">Medium</option>
+                        <option value="lrg">Large</option>
+                      </select>
+                    </div>
+                  </div>
+                </div><!--End of size selection panel-->
+                <div class="tpng-sec">
+                  <div class="form-group panel">
+                    <div class="panel-heading">
+                      <label class="col-form-label">What Would You Like On Your Pizza?</label>
+                    </div>
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div>
+                            <label class="span-spacing pep-btn">Pepperoni<br><input id="btnPep" name="tp-grp" type="checkbox" value="Pepperoni"></label>
+                          </div>
+                          <div>
+                            <label class="span-spacing mush-btn">Mushroom<br><input id="btnMsh" name="tp-grp" type="checkbox" value="Mushroom"></label>
+                          </div>
+                          <div>
+                            <label class="span-spacing onn-btn">Onion<br><input id="btnOn" name="tp-grp" type="checkbox" value="Onion"></label>
+                          </div>
+                          <div>
+                            <label class="span-spacing ssg-btn">Sausage<br><input id="btnSsg" name="tp-grp" type="checkbox" value="Sausage"></label>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div>
+                            <label class="span-spacing bcn-btn">Bacon<br><input id="btnBcn" name="tp-grp" type="checkbox" value="Bacon"></label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <label class="span-spacing xcz-btn">Extra Cheese<input id="btnCz" name="tp-grp" type="checkbox" value="Extra Cheese"></label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <label class="span-spacing olv-btn">Black Olives<input id="btnOlv" name="tp-grp" type="checkbox" value="Black Olives"></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><!--End of topping selection panel-->
               </form>
-            </div>
+            </div><!--End of center panel-->
+            <div class="col-md-2 col-lg-2 rt-btns-sec">
+              <button id="cnfrm" class="btn btn-success" value="confirm" type="button">Confirm Order</button>
+              <button id="cancel" class="btn btn-danger" value="cancel" type="button">Cancel Order</button>
+            </div><!--End of right buttons panel-->
           </div>
+          <div class="col-md-10 col-lg-10 orderCalcBg">
+            <div class="red-box">
+              <p>Imagine sitting in the rolling hills of Tuscany with your loved ones eating a rustic feast. We try to recreate the authenticity and bold flavors of Italy everyday. We make our dough from a sourdough starter handed down from generation to generation. This kind of passion and attention to detail cannot be faked. You can go get anyones pizza or you can have the real thing from real Italians. Fusce ligula odio, cursus vitae dolor eu, sagi</p>
+            </div><!---->
+            <div class="col-lg-2 lft-btns-sec">
+              <button id="" class="btn btn-primary" value="" type="button">Begin Order</button>
+            </div><!--End of left buttons panel-->
+
+            <div class="col-lg-2 rt-btns-sec">
+              <button id="" class="btn btn-danger" value="" type="button">Cancel Order</button>
+            </div><!--End of right buttons panel-->
+
+            <span class="cent-sec">
+
+              Imagine sitting in the rolling hills of Tuscany with your loved ones eating a rustic feast. We try to recreate the authenticity and bold flavors of Italy everyday. We make our dough from a sourdough starter handed down from generation to generation. This kind of passion and attention to detail cannot be faked. You can go get anyones pizza or you can have the real thing from real Italians. Fusce ligula odio, cursus vitae dolor eu, sspanagi
+            </span><!--End of center panel-->
+
+          </div>
+
         </div>
       </div><!--Row Div-->
     </div><!--Container Div-->

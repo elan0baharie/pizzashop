@@ -1,8 +1,11 @@
 //U.I.
+
+
 function guestPizza(size, price)  {
   this.size = {sm: 8, med: 10, lg: 14},
   this.tempCostHold = 0;
   this.finalPrice = 0;
+  this.topList = [];
   this.pepperoni = {name: "Pepperoni", price: 3},
   this.mushroom = {name: "Mushroom", price: 2},
   this.onion = {name: "Onion", price: 1},
@@ -16,71 +19,113 @@ function guestPizza(size, price)  {
   }
 }
 
+guestPizza.prototype.sizeCalc = function (size) {
+  this.tempCostHold = 0;
+  console.log(size);
+  if(size === " ") {
+    this.tempCostHold = 0;
+    console.log("exit");
+    return;
+  } else if (size === "small") {
+    this.tempCostHold = this.tempCostHold + this.size.sm;
+    console.log(this.tempCostHold);
+  } else if (size === "med") {
+    this.tempCostHold = this.tempCostHold + this.size.med;
+    console.log(this.tempCostHold);
+  } else if (size === "lrg") {
+    this.tempCostHold = this.tempCostHold + this.size.lg;
+    console.log(this.tempCostHold);
+  }
+}
+
+guestPizza.prototype.topTst = function () {
+  var val = [];
+  $(':checkbox:checked').each(function(i){
+    val[i] = $(this).val();
+    console.log(val);
+    this.topList = val;
+    console.log(this.topList);
+  });
+}
+
+//
+// guestPizza.prototype.topCalc = function () {
+//   console.log(this);
+//   console.log(selections);
+//   $("input:checkbox[name=tp-grp]:checked").each(function(){
+//     selections.push($(this).val());
+//     console.log(newGuestPizza.selections);
+//   });
+  //
+  // var toppingsLst = document.getElementsByName('tp-grp');
+  // for (var i = 0; i <= toppingsLst.length ; i++) {
+  //   selections.splice(hope);
+  //   console.log(selections.value);
+  // }
+  // if(selections.includes("Pepperoni") === true) {
+  //   console.log("exit");
+  //   return;
+  // } else if (selections.includes("Mushroom") === true) {
+  //   console.log("exit");
+  //   return;
+  // } else if (selections.includes("Onion") === true) {
+  //   console.log("exit");
+  //   return;
+  // } else if (selections.includes("Sausage") === true) {
+  //   console.log("exit");
+  //   return;
+  // }
+// }
+
+
 //B.L.
 
 $(document).ready(function() {
 
-  var newGuestPizza = new guestPizza();
+    var newGuestPizza = new guestPizza();
 
-  $("#btnSml").click(function(event) {
+  $("#start").click(function (event) {
     event.preventDefault();
-    newGuestPizza.tempCostHold = newGuestPizza.size.sm;
-    console.log(newGuestPizza.tempCostHold);
-  });// Small Pizza Size btn
 
-  $("#btnMed").click(function(event) {
-    event.preventDefault();
-    newGuestPizza.tempCostHold = newGuestPizza.size.med;
-    console.log(newGuestPizza.tempCostHold);
-  });// Med Pizza Size btn
 
-  $("#btnLrg").click(function(event) {
-    event.preventDefault();
-    newGuestPizza.tempCostHold = newGuestPizza.size.lg;
-    console.log(newGuestPizza.tempCostHold);
-  });// Lg Pizza Size btn
 
-  $("#btnPep").click(function(event) {
-    event.preventDefault();
-    newGuestPizza.tempCostHold = newGuestPizza.tempCostHold + newGuestPizza.pepperoni.price;
-    console.log(newGuestPizza.tempCostHold);
-  });// Pepperoni btn
+    $("select#pzSize").on('change', function () {
+        var valueSelected = this.value;
+        newGuestPizza.sizeCalc(valueSelected);
+        console.log(valueSelected);
+    });
 
-  $("#btnMsh").click(function(event) {
-    event.preventDefault();
-    newGuestPizza.tempCostHold = newGuestPizza.tempCostHold + newGuestPizza.mushroom.price;
-    console.log(newGuestPizza.tempCostHold);
-  });// Mushroom btn
+    $("input:checkbox[name=tp-grp]").on('change', function () {
+      newGuestPizza.topCalc();
+    });
 
-  $("#btnOn").click(function(event) {
-    event.preventDefault();
-    newGuestPizza.tempCostHold = newGuestPizza.tempCostHold + newGuestPizza.onion.price;
-    console.log(newGuestPizza.tempCostHold);
-  });// Onion btn
 
-  $("#btnSsg").click(function(event) {
-    event.preventDefault();
-    newGuestPizza.tempCostHold = newGuestPizza.tempCostHold + newGuestPizza.sausage.price;
-    console.log(newGuestPizza.tempCostHold);
-  });// Sausage btn
+    $("div.rt-btns-sec").show(1000);
+    $("div.cent-sec").show(1000);
+    $("div.lft-btns-sec").hide(500);
+  });
 
-  $("#btnBcn").click(function(event) {
-    event.preventDefault();
-    newGuestPizza.tempCostHold = newGuestPizza.tempCostHold + newGuestPizza.bacon.price;
-    console.log(newGuestPizza.tempCostHold);
-  });// Bacon btn
 
-  $("#btnCz").click(function(event) {
-    event.preventDefault();
-    newGuestPizza.tempCostHold = newGuestPizza.tempCostHold + newGuestPizza.xtrCz.price;
-    console.log(newGuestPizza.tempCostHold);
-  });// Extra Cheese btn
 
-  $("#btnOlv").click(function(event) {
+  $("#cancel").click(function (event) {
     event.preventDefault();
-    newGuestPizza.tempCostHold = newGuestPizza.tempCostHold + newGuestPizza.blkOlv.price;
-    console.log(newGuestPizza.tempCostHold);
-  });// Black Olive btn
+      $("div.lft-btns-sec").show(1000);
+      $("div.rt-btns-sec").hide(500);
+      $("div.cent-sec").hide(500);
+  });
+
+  $("#cnfrm").click(function (event) {
+    event.preventDefault();
+    newGuestPizza.topTst();
+
+    // $("div.orderPnlBg").hide(1000);
+  });
+
+
+  $("button.button-spacing").click(function(event) {
+    event.preventDefault();
+    $(this).toggleClass('active');
+  });
 
 
   $("#toppng-form").submit(function(event) {
