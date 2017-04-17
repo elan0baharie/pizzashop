@@ -12,11 +12,7 @@ function guestPizza(size, price)  {
   this.sausage = {name: "Sausage", price: 3},
   this.bacon = {name: "Bacon", price: 3},
   this.xtrCz = {name: "Extra Cheese", price: 2},
-  this.blkOlv = {name: "Black Olives", price: 2},
-  this.createPrice = function () {
-    this.finalPrice = this.tempCostHold;
-    return this.finalPrice;
-  }
+  this.blkOlv = {name: "Black Olives", price: 2}
 }
 
 guestPizza.prototype.sizeCalc = function (size) {
@@ -43,55 +39,62 @@ guestPizza.prototype.topTst = function () {
   $(':checkbox:checked').each(function(i){
     val[i] = $(this).val();
     this.topList = val;
-    console.log(this.topList);
   });
-  console.log(val);
-  if(val.includes("Pepperoni")) {
-    console.log("works");
-  } else if (val.includes("Mushroom")) {
-    console.log("hi");
-  } else if (val.includes("Onion")) {
-    console.log("hi0");
-  } else if (val.includes("Sausage")) {
-    console.log("h0");
-  } else if (val.includes("Bacon")) {
-    console.log("i0");
-  } else if (val.includes("Extra Cheese")) {
-    console.log("i");
-  } else if (val.includes("Black Olives")) {
-    console.log("A");
+  return val;
+}
+
+
+guestPizza.prototype.topCalc = function () {
+  console.log(this.topList);
+  var ary = this.topList;
+  var pepTest = ary.includes("Pepperoni");
+  var mshTest = ary.includes("Mushroom");
+  var onTest = ary.includes("Onion");
+  var ssgTest = ary.includes("Sausage");
+  var bcnTest = ary.includes("Bacon");
+  var xczTest = ary.includes("Extra Cheese");
+  var olvTest = ary.includes("Black Olives");
+  if (pepTest === true) {
+    console.log("Pep");
+    this.tempCostHold = this.tempCostHold + this.pepperoni.price;
+    ary.shift();
+    this.topCalc();
+  } else if (mshTest === true) {
+    console.log("Mush");
+    this.tempCostHold = this.tempCostHold + this.mushroom.price;
+    ary.shift();
+    this.topCalc();
+  } else if (onTest === true) {
+    console.log("Onyon");
+    this.tempCostHold = this.tempCostHold + this.onion.price;
+    ary.shift();
+    this.topCalc();
+  } else if (ssgTest === true) {
+    console.log("Saus");
+    this.tempCostHold = this.tempCostHold + this.sausage.price;
+    ary.shift();
+    this.topCalc();
+  } else if (bcnTest === true) {
+    console.log("Bacooo");
+    this.tempCostHold = this.tempCostHold + this.bacon.price;
+    ary.shift();
+    this.topCalc();
+  } else if (xczTest === true) {
+    console.log("X Cz");
+    this.tempCostHold = this.tempCostHold + this.xtrCz.price;
+    ary.shift();
+    this.topCalc();
+  } else if (olvTest === true) {
+    console.log("Olvs");
+    this.tempCostHold = this.tempCostHold + this.blkOlv.price;
+    ary.shift();
+    this.topCalc();
+  } else {
+    console.log(this.tempCostHold);
+    return;
   }
 
 }
-
-//
-// guestPizza.prototype.topCalc = function () {
-//   console.log(this);
-//   console.log(selections);
-//   $("input:checkbox[name=tp-grp]:checked").each(function(){
-//     selections.push($(this).val());
-//     console.log(newGuestPizza.selections);
-//   });
-  //
-  // var toppingsLst = document.getElementsByName('tp-grp');
-  // for (var i = 0; i <= toppingsLst.length ; i++) {
-  //   selections.splice(hope);
-  //   console.log(selections.value);
-  // }
-  // if(selections.includes("Pepperoni") === true) {
-  //   console.log("exit");
-  //   return;
-  // } else if (selections.includes("Mushroom") === true) {
-  //   console.log("exit");
-  //   return;
-  // } else if (selections.includes("Onion") === true) {
-  //   console.log("exit");
-  //   return;
-  // } else if (selections.includes("Sausage") === true) {
-  //   console.log("exit");
-  //   return;
-  // }
-// }
 
 
 //B.L.
@@ -113,8 +116,9 @@ $(document).ready(function() {
 
     $("#cnfrm").click(function (event) {
       event.preventDefault();
-      newGuestPizza.topTst();
-
+      newGuestPizza.topList = newGuestPizza.topTst();
+      console.log(newGuestPizza.topList);
+      newGuestPizza.topCalc();
       // $("div.orderPnlBg").hide(1000);
     });
 
