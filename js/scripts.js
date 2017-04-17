@@ -42,10 +42,26 @@ guestPizza.prototype.topTst = function () {
   var val = [];
   $(':checkbox:checked').each(function(i){
     val[i] = $(this).val();
-    console.log(val);
     this.topList = val;
     console.log(this.topList);
   });
+  console.log(val);
+  if(val.includes("Pepperoni")) {
+    console.log("works");
+  } else if (val.includes("Mushroom")) {
+    console.log("hi");
+  } else if (val.includes("Onion")) {
+    console.log("hi0");
+  } else if (val.includes("Sausage")) {
+    console.log("h0");
+  } else if (val.includes("Bacon")) {
+    console.log("i0");
+  } else if (val.includes("Extra Cheese")) {
+    console.log("i");
+  } else if (val.includes("Black Olives")) {
+    console.log("A");
+  }
+
 }
 
 //
@@ -95,9 +111,13 @@ $(document).ready(function() {
         console.log(valueSelected);
     });
 
-    $("input:checkbox[name=tp-grp]").on('change', function () {
-      newGuestPizza.topCalc();
+    $("#cnfrm").click(function (event) {
+      event.preventDefault();
+      newGuestPizza.topTst();
+
+      // $("div.orderPnlBg").hide(1000);
     });
+
 
 
     $("div.rt-btns-sec").show(1000);
@@ -114,12 +134,6 @@ $(document).ready(function() {
       $("div.cent-sec").hide(500);
   });
 
-  $("#cnfrm").click(function (event) {
-    event.preventDefault();
-    newGuestPizza.topTst();
-
-    // $("div.orderPnlBg").hide(1000);
-  });
 
 
   $("button.button-spacing").click(function(event) {
