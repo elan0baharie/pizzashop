@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Ribeye+Marrow" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.2.0.js"></script>
@@ -60,27 +61,27 @@
                       <div class="row">
                         <div class="col-sm-6">
                           <div>
-                            <label class="span-spacing pep-btn">Pepperoni<br><input id="btnPep" name="tp-grp" type="checkbox" value="Pepperoni"></label>
+                            <label class="span-spacing pep-btn">Pepperoni $3<br><input id="btnPep" name="tp-grp" type="checkbox" value="Pepperoni"></label>
                           </div>
                           <div>
-                            <label class="span-spacing mush-btn">Mushroom<br><input id="btnMsh" name="tp-grp" type="checkbox" value="Mushroom"></label>
+                            <label class="span-spacing mush-btn">Mushroom $2<br><input id="btnMsh" name="tp-grp" type="checkbox" value="Mushroom"></label>
                           </div>
                           <div>
-                            <label class="span-spacing onn-btn">Onion<br><input id="btnOn" name="tp-grp" type="checkbox" value="Onion"></label>
+                            <label class="span-spacing onn-btn">Onion $1<br><input id="btnOn" name="tp-grp" type="checkbox" value="Onion"></label>
                           </div>
                           <div>
-                            <label class="span-spacing ssg-btn">Sausage<br><input id="btnSsg" name="tp-grp" type="checkbox" value="Sausage"></label>
+                            <label class="span-spacing ssg-btn">Sausage $3<br><input id="btnSsg" name="tp-grp" type="checkbox" value="Sausage"></label>
                           </div>
                         </div>
                         <div class="col-sm-6">
                           <div>
-                            <label class="span-spacing bcn-btn">Bacon<br><input id="btnBcn" name="tp-grp" type="checkbox" value="Bacon"></label>
+                            <label class="span-spacing bcn-btn">Bacon $3<br><input id="btnBcn" name="tp-grp" type="checkbox" value="Bacon"></label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <label class="span-spacing xcz-btn">Extra Cheese<input id="btnCz" name="tp-grp" type="checkbox" value="Extra Cheese"></label>
+                            <label class="span-spacing xcz-btn">Ex Cheese $2<input id="btnCz" name="tp-grp" type="checkbox" value="Extra Cheese"></label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <label class="span-spacing olv-btn">Black Olives<br><input id="btnOlv" name="tp-grp" type="checkbox" value="Black Olives"></label>
+                            <label class="span-spacing olv-btn">Blk Olives $2<br><input id="btnOlv" name="tp-grp" type="checkbox" value="Black Olives"></label>
                           </div>
                         </div>
                       </div>
@@ -90,29 +91,35 @@
               </form>
             </div><!--End of center panel-->
             <div class="col-md-2 col-lg-2 rt-btns-sec">
-              <button id="cnfrm" class="btn btn-success" value="confirm" type="button">Confirm Order</button>
-              <button id="cancel" class="btn btn-danger" value="cancel" type="button">Cancel Order</button>
+              <button id="cnfrm" class="btn btn-success btn-lg" value="confirm" type="button">Confirm Order</button>
+              <br>
+              <button id="cancel" class="btn btn-danger btn-lg" value="cancel" type="button">Cancel Order</button>
             </div><!--End of right buttons panel-->
           </div>
-          <div class="col-md-10 col-lg-10 orderCalcBg">
-            <div class="red-box">
-              <p>Imagine sitting in the rolling hills of Tuscany with your loved ones eating a rustic feast. We try to recreate the authenticity and bold flavors of Italy everyday. We make our dough from a sourdough starter handed down from generation to generation. This kind of passion and attention to detail cannot be faked. You can go get anyones pizza or you can have the real thing from real Italians. Fusce ligula odio, cursus vitae dolor eu, sagi</p>
+          <div class="col-md-10 col-lg-10 orderCalcBg hide-class">
+            <div class="col-lg-12 title-box">
+              <h2>Total Cost</h2>
+              <hr>
             </div><!---->
-            <div class="col-lg-2 lft-btns-sec">
-              <button id="" class="btn btn-primary" value="" type="button">Begin Order</button>
+            <div class="col-lg-4">
+              <span class="price-span">
+                <h3>Size</h3>
+              </span>
+              <span id="sizePrice" class="price-span"></span>
             </div><!--End of left buttons panel-->
-
-            <div class="col-lg-2 rt-btns-sec">
-              <button id="" class="btn btn-danger" value="" type="button">Cancel Order</button>
+            <div class="col-lg-4">
+              <span class="price-span">
+                <h3>Toppings</h3>
+              </span>
+              <span id="topPrice" class="price-span"></span>
             </div><!--End of right buttons panel-->
-
-            <span class="cent-sec">
-
-              Imagine sitting in the rolling hills of Tuscany with your loved ones eating a rustic feast. We try to recreate the authenticity and bold flavors of Italy everyday. We make our dough from a sourdough starter handed down from generation to generation. This kind of passion and attention to detail cannot be faked. You can go get anyones pizza or you can have the real thing from real Italians. Fusce ligula odio, cursus vitae dolor eu, sspanagi
-            </span><!--End of center panel-->
-
+            <div class="col-lg-4">
+              <span class="price-span">
+                <h3>Total</h3>
+              </span>
+              <span id="totalPrice" class="price-span"></span>
+            </div><!--End of right buttons panel-->
           </div>
-
         </div>
       </div><!--Row Div-->
     </div><!--Container Div-->

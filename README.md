@@ -10,9 +10,9 @@ _I made a short page for assessment day to allow the user to choose a pizza size
 
 Specifications:
 
-* _Make a UI with buttons for pizza size, topping preference, and pricing display_
 * _Make an object to retain the users pizza properties_
-* _Link pizza object with UI for size choice_
+* _Give object size properties with pricing_
+* _Detect size choice and store_
 * _Detect topping choice and store_
 * _Sum topping choice and store_
 * _Sum topping choice and size and display_

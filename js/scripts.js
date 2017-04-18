@@ -5,6 +5,7 @@ function guestPizza(size, price)  {
   this.size = {sm: 8, med: 10, lg: 14},
   this.tempCostHold = 0;
   this.finalPrice = 0;
+  this.sizePrc = 0;
   this.topList = [];
   this.pepperoni = {name: "Pepperoni", price: 3},
   this.mushroom = {name: "Mushroom", price: 2},
@@ -23,15 +24,20 @@ guestPizza.prototype.sizeCalc = function (size) {
     console.log("exit");
     return;
   } else if (size === "small") {
+    this.sizePrc = this.size.sm;
     this.tempCostHold = this.tempCostHold + this.size.sm;
     console.log(this.tempCostHold);
   } else if (size === "med") {
+    this.sizePrc = this.size.med;
     this.tempCostHold = this.tempCostHold + this.size.med;
     console.log(this.tempCostHold);
   } else if (size === "lrg") {
+    this.sizePrc = this.size.lg;
     this.tempCostHold = this.tempCostHold + this.size.lg;
     console.log(this.tempCostHold);
   }
+
+  $("#sizePrice").text(this.tempCostHold + " +");
 }
 
 guestPizza.prototype.topTst = function () {
@@ -90,7 +96,11 @@ guestPizza.prototype.topCalc = function () {
     ary.shift();
     this.topCalc();
   } else {
-    console.log(this.tempCostHold);
+    this.finalPrice = this.tempCostHold;
+    $("#totalPrice").text(this.finalPrice);
+    var prntTop = this.finalPrice - this.sizePrc;
+    $("#topPrice").text(prntTop + " =");
+
     return;
   }
 
@@ -119,7 +129,8 @@ $(document).ready(function() {
       newGuestPizza.topList = newGuestPizza.topTst();
       console.log(newGuestPizza.topList);
       newGuestPizza.topCalc();
-      // $("div.orderPnlBg").hide(1000);
+      $("div.orderPnlBg").hide(1000);
+      $("div.orderCalcBg").show(1000);
     });
 
 
@@ -136,13 +147,11 @@ $(document).ready(function() {
       $("div.lft-btns-sec").show(1000);
       $("div.rt-btns-sec").hide(500);
       $("div.cent-sec").hide(500);
-  });
+      document.getElementById("pizzaOrderForm").reset();
+      $("#topPrice").text(" ");
+      $("#sizePrice").text(" ");
+      $("#totalPrice").text(" ");
 
-
-
-  $("button.button-spacing").click(function(event) {
-    event.preventDefault();
-    $(this).toggleClass('active');
   });
 
 

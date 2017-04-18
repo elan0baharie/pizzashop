@@ -7,8 +7,8 @@ body {
 }
 
 hr {
-  border-color: blue;
-  border-width: 3px;
+  border-color: #604020;
+  border-width: 4px;
   background-color: #ddfdff;
 }
 
@@ -71,7 +71,7 @@ hr {
 }
 
 #start {
-  margin-top: 140%;
+  margin-top: 100%;
 }
 
 #cnfrm {
@@ -111,6 +111,7 @@ hr {
   float: left;
   display: inline;
 }
+
 .tpng-sec {
   height: 100%;
   width: 50%;
@@ -142,10 +143,18 @@ hr {
   font-weight: bold;
 }
 
-#btnPep:active {
-  color: red;
-  background-color: red;
-  opacity: .7;
+.price-span {
+  height: 55px;
+  background-color: yellow;
+  font-family: 'Ribeye Marrow', cursive;
+  font-size: 60px;
+}
+
+.bar-span {
+  height: 15px;
+  background-color: yellow;
+  font-family: cursive;
+  font-size: 42px;
 }
 
 .hide-class {
